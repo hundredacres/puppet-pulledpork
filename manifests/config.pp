@@ -1,6 +1,7 @@
 class pulledpork::config (
   $version,
   $url,
+  $prefix,
   $oinkcode,
   $rule_path,
   $local_rule_path,
