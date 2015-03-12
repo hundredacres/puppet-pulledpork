@@ -17,9 +17,12 @@ class pulledpork (
   }
 
   class { 'pulledpork::config':
-    version  => $version,
-    prefix   => $prefix,
-    oinkcode => $oinkcode,
+    version         => $version,
+    prefix          => $prefix,
+    oinkcode        => $oinkcode,
+    rule_path       => $rule_path,
+    local_rule_path => $local_rule_path,
+    sid_msg_map     => $sid_msg_map,
   }
 
 }
