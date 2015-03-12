@@ -10,7 +10,7 @@ class pulledpork::install (
     verbose     => false,
   }
 
-  directory { '/var/log/pulledpork':
+  file { '/var/log/pulledpork':
     ensure => directory,
   }
 
