@@ -8,7 +8,7 @@ class pulledpork (
   $oinkcode,
 ) inherits pulledpork::params {
 
-  Class['pulledpork::install'] -> Class['pulledpork::config'] -> Class['pulledpork::cron']
+  Class['pulledpork::install'] -> Class['pulledpork::config']
 
   class { 'pulledpork::install':
     version => $version,
