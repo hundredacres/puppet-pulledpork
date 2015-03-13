@@ -14,8 +14,9 @@ class pulledpork::install (
     ensure => directory,
   }
 
-  exec { "tar zxvf /usr/src/pulledpork-${version}.tar.gz":
+  exec { 'install-pulledpork':
     cwd     => $prefix,
+    command => "/bin/tar zxf /usr/src/pulledpork-${version}.tar.gz",
     creates => "${prefix}/pulledpork-${version}",
     require => Wget::Fetch[$url],
   }
