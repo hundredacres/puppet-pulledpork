@@ -8,6 +8,8 @@ class pulledpork (
   $oinkcode,
 ) inherits pulledpork::params {
 
+  include wget
+
   Class['pulledpork::install'] -> Class['pulledpork::config']
 
   class { 'pulledpork::install':
