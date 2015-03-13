@@ -4,7 +4,8 @@ class pulledpork::install (
   $prefix
 ) {
 
-  wget::fetch { $url:
+  wget::fetch { 'download-pulledpork':
+    source      => $url,
     destination => '/usr/src',
     timeout     => 0,
     verbose     => false,
@@ -18,6 +19,6 @@ class pulledpork::install (
     cwd     => $prefix,
     command => "/bin/tar zxf /usr/src/pulledpork-${version}.tar.gz",
     creates => "${prefix}/pulledpork-${version}",
-    require => Wget::Fetch[$url],
+    require => Wget::Fetch['download-pulledpork'],
   }
 }
