@@ -6,7 +6,7 @@ class pulledpork::install (
 
   wget::fetch { 'download-pulledpork':
     source      => $url,
-    destination => '/usr/src',
+    destination => "/usr/src/pulledpork-${version}.tar.gz",
     timeout     => 0,
     verbose     => false,
   }
