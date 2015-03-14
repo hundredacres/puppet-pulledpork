@@ -4,6 +4,10 @@ class pulledpork::install (
   $prefix
 ) {
 
+  package { $pulledpork::params::pkgs: 
+    ensure => present,
+  }
+
   wget::fetch { 'download-pulledpork':
     source      => $url,
     destination => "/usr/src/pulledpork-${version}.tar.gz",
