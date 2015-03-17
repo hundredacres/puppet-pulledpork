@@ -6,7 +6,7 @@ class pulledpork::config (
   $local_rule_path,
   $sid_msg_map,
   $black_list,
-  ipr_version
+  $ipr_version
 ) {
 
   file { "${prefix}/pulledpork-${version}/etc/pulledpork.conf":
