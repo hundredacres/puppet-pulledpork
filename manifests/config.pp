@@ -4,7 +4,9 @@ class pulledpork::config (
   $oinkcode,
   $rule_path,
   $local_rule_path,
-  $sid_msg_map
+  $sid_msg_map,
+  $black_list,
+  ipr_version
 ) {
 
   file { "${prefix}/pulledpork-${version}/etc/pulledpork.conf":
