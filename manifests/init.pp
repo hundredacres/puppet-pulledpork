@@ -5,6 +5,8 @@ class pulledpork (
   $rule_path       = $pulledpork::params::rule_path,
   $local_rule_path = $pulledpork::params::local_rule_path,
   $sid_msg_map     = $pulledpork::params::sid_msg_map,
+  $black_list      = $pulledpork::params::black_list,
+  $ipr_version     = $pulledpork::params::ipr_version,
   $oinkcode,
 ) inherits pulledpork::params {
 
@@ -23,6 +25,8 @@ class pulledpork (
     rule_path       => $rule_path,
     local_rule_path => $local_rule_path,
     sid_msg_map     => $sid_msg_map,
+    black_list      => $black_list,
+    ipr_version     => $ipr_version,
   }
 
 }

@@ -5,6 +5,8 @@ class pulledpork::params {
   $rule_path       = '/etc/snort/rules/snort.rules'
   $local_rule_path = '/etc/snort/rules/local.rules'
   $sid_msg_map     = '/etc/snort/sid-msg.map'
+  $black_list      = '/usr/local/etc/snort/rules/iplists/default.blacklist'
+  $ipr_version     = '/usr/local/etc/snort/rules/iplists'
 
   if $::osfamily == 'RedHat' {
     $pkgs = [
