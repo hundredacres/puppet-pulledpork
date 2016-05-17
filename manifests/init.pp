@@ -7,6 +7,7 @@ class pulledpork (
   $sid_changelog   = $pulledpork::params::sid_changelog,
   $sid_msg_map     = $pulledpork::params::sid_msg_map,
   $sid_msg_version = $pulledpork::params::sid_msg_version,
+  $snort           = $pulledpork::params::snort,
   $black_list      = $pulledpork::params::black_list,
   $ipr_version     = $pulledpork::params::ipr_version,
   $oinkcode,
@@ -29,6 +30,7 @@ class pulledpork (
     sid_changelog   => $sid_changelog,
     sid_msg_map     => $sid_msg_map,
     sid_msg_version => $sid_msg_version,
+    snort           => $snort,
     black_list      => $black_list,
     ipr_version     => $ipr_version,
   }

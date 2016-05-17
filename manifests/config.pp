@@ -7,6 +7,7 @@ class pulledpork::config (
   $sid_changelog,
   $sid_msg_map,
   $sid_msg_version,
+  $snort,
   $black_list,
   $ipr_version
 ) {

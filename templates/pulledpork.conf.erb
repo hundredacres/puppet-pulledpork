@@ -109,8 +109,10 @@ sid_changelog=<%= @sid_changelog %>
 # defined in your snort.conf, needs a trailing slash
 #sorule_path=/usr/local/lib/snort_dynamicrules/
 
+<% if scope['pulledpork::snort'] -%>
 # Path to the snort binary, we need this to generate the stub files
 snort_path=/sbin/snort
+<% end %>
 
 # We need to know where your snort.conf file lives so that we can
 # generate the stub files

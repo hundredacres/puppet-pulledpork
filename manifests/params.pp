@@ -7,6 +7,7 @@ class pulledpork::params {
   $sid_changelog   = '/var/log/pulledpork/sid_changes.log'
   $sid_msg_map     = '/etc/snort/sid-msg.map'
   $sid_msg_version = 2
+  $snort           = true
   $black_list      = '/usr/local/etc/snort/rules/iplists/default.blacklist'
   $ipr_version     = '/usr/local/etc/snort/rules/iplists'
 
