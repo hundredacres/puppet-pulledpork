@@ -33,6 +33,12 @@ rule_url=https://www.snort.org/reg-rules/|opensource.gz|<%= @oinkcode %>
 # this value for you, if, however you put the version information in, PP will
 # NOT populate this value but will use your value!
 
+<% if scope['pulledpork::rules'] -%>
+  <%- scope['pulledpork::rules'].each do |r| -%>
+    rule_url=<%= r %>
+  <%- end -%>
+<% end -%>
+
 # Specify rule categories to ignore from the tarball in a comma separated list
 # with no spaces.  There are four ways to do this:
 # 1) Specify the category name with no suffix at all to ignore the category
