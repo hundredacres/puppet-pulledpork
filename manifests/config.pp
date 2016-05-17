@@ -4,7 +4,9 @@ class pulledpork::config (
   $oinkcode,
   $rule_path,
   $local_rule_path,
+  $sid_changelog,
   $sid_msg_map,
+  $sid_msg_version,
   $black_list,
   $ipr_version
 ) {

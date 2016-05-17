@@ -91,11 +91,11 @@ sid_msg=<%= @sid_msg_map %>
 
 # New for by2 and more advanced msg mapping.  Valid options are 1 or 2
 # specify version 2 if you are running barnyard2.2+.  Otherwise use 1
-sid_msg_version=1
+sid_msg_version=<%= @sid_msg_version %>
 
 # Where do you want me to put the sid changelog?  This is a changelog 
 # that pulledpork maintains of all new sids that are imported
-sid_changelog=/var/log/pulledpork/sid_changes.log
+sid_changelog=<%= @sid_changelog %>
 # this value is optional
 
 #######
@@ -191,10 +191,10 @@ IPRVersion=<%= @ipr_version %>
 
 # Here you can specify what rule modification files to run automatically.
 # simply uncomment and specify the apt path.
-# enablesid=/usr/local/etc/snort/enablesid.conf
-# dropsid=/usr/local/etc/snort/dropsid.conf
-# disablesid=/usr/local/etc/snort/disablesid.conf
-# modifysid=/usr/local/etc/snort/modifysid.conf
+enablesid=<%= @prefix %>/pulledpork-<%= @version %>/etc/enablesid.conf
+dropsid=<%= @prefix %>/pulledpork-<%= @version %>/etc/dropsid.conf
+disablesid=<%= @prefix %>/pulledpork-<%= @version %>/etc/disablesid.conf
+modifysid=<%= @prefix %>/pulledpork-<%= @version %>/etc/modifysid.conf
 
 # What is the base ruleset that you want to use, please uncomment to use
 # and see the README.RULESETS for a description of the options.  

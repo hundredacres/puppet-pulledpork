@@ -1,10 +1,12 @@
 class pulledpork (
   $version         = $pulledpork::params::version,
-  $baseurl         = $pulledpork::params::baseurl, 
+  $baseurl         = $pulledpork::params::baseurl,
   $prefix          = $pulledpork::params::prefix,
   $rule_path       = $pulledpork::params::rule_path,
   $local_rule_path = $pulledpork::params::local_rule_path,
+  $sid_changelog   = $pulledpork::params::sid_changelog,
   $sid_msg_map     = $pulledpork::params::sid_msg_map,
+  $sid_msg_version = $pulledpork::params::sid_msg_version,
   $black_list      = $pulledpork::params::black_list,
   $ipr_version     = $pulledpork::params::ipr_version,
   $oinkcode,
