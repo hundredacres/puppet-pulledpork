@@ -15,6 +15,10 @@ class pulledpork::install (
     verbose     => false,
   }
 
+  file { $prefix:
+    ensure => directory,
+  }
+
   file { '/var/log/pulledpork':
     ensure => directory,
   }
