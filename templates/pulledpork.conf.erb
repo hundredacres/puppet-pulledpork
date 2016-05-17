@@ -136,7 +136,7 @@ snort_path=/sbin/snort
 # If you are using IP Reputation and getting some public lists, you will probably
 # want to tell pulledpork where your blacklist file lives, PP automagically will
 # de-dupe any duplicate IPs from different sources.
-black_list=<%= black_list %>
+black_list=<%= @black_list %>
 
 # IP Reputation does NOT require a full snort HUP, it introduces a concept whereby
 # the IP list can be reloaded while snort is running through the use of a control
@@ -145,7 +145,7 @@ black_list=<%= black_list %>
 # configure these!  The following option tells pulledpork where to place the version
 # file for use with control socket ip list reloads!
 # This should be the same path where your black_list lives!
-IPRVersion=<%= ipr_version %>
+IPRVersion=<%= @ipr_version %>
 
 # The following option tells snort where the snort_control tool is located.
 #snort_control=/usr/local/bin/snort_control
@@ -206,4 +206,4 @@ IPRVersion=<%= ipr_version %>
 ####### need to process so_rules, simply comment out the so_rule section
 ####### you can also specify -T at runtime to process only GID 1 rules.
 
-version=0.7.0
+version=<%= @version %>
