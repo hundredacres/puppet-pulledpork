@@ -4,7 +4,7 @@ class pulledpork::install (
   $prefix
 ) {
 
-  package { $pulledpork::params::pkgs: 
+  package { $pulledpork::params::pkgs:
     ensure => present,
   }
 
