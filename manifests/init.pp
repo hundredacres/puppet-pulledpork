@@ -26,7 +26,9 @@ class pulledpork (
     oinkcode        => $oinkcode,
     rule_path       => $rule_path,
     local_rule_path => $local_rule_path,
+    sid_changelog   => $sid_changelog,
     sid_msg_map     => $sid_msg_map,
+    sid_msg_version => $sid_msg_version,
     black_list      => $black_list,
     ipr_version     => $ipr_version,
   }
