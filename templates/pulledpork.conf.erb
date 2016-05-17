@@ -36,9 +36,9 @@ rule_url=https://www.snort.org/reg-rules/|opensource.gz|<%= @oinkcode %>
 <% end %>
 
 <% if scope['pulledpork::rules'] -%>
-  <%- scope['pulledpork::rules'].each do |r| -%>
-    rule_url=<%= r %>
-  <%- end -%>
+<% scope['pulledpork::rules'].each do |r| -%>
+rule_url=<%= r %>
+<% end -%>
 <% end -%>
 
 # Specify rule categories to ignore from the tarball in a comma separated list
