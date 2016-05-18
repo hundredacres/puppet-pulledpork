@@ -77,7 +77,7 @@ temp_path=/tmp
 # rules? (this value has changed as of 0.4.0, previously we copied 
 # all of the rules, now we are creating a single large rules file
 # but still keeping a separate file for your so_rules!
-rule_path=<%= @rule_path %>
+rule_path=<%= scope['pulledpork::rule_path'] %>
 
 # What path you want the .rules files to be written to, this is UNIQUE
 # from the rule_path and cannot be used in conjunction, this is to be used with the
@@ -92,18 +92,18 @@ rule_path=<%= @rule_path %>
 # files that are local to your system here by adding a comma and more paths...
 # remember that the FULL path must be specified for EACH value.
 # local_rules=/path/to/these.rules,/path/to/those.rules
-local_rules=<%= @local_rule_path %>
+local_rules=<%= scope['pulledpork::local_rule_path'] %>
 
 # Where should I put the sid-msg.map file?
-sid_msg=<%= @sid_msg_map %>
+sid_msg=<%= scope['pulledpork::sid_msg_map'] %>
 
 # New for by2 and more advanced msg mapping.  Valid options are 1 or 2
 # specify version 2 if you are running barnyard2.2+.  Otherwise use 1
-sid_msg_version=<%= @sid_msg_version %>
+sid_msg_version=<%= scope['pulledpork::sid_msg_version'] %>
 
 # Where do you want me to put the sid changelog?  This is a changelog 
 # that pulledpork maintains of all new sids that are imported
-sid_changelog=<%= @sid_changelog %>
+sid_changelog=<%= scope['pulledpork::sid_changelog'] %>
 # this value is optional
 
 #######
@@ -146,7 +146,7 @@ snort_path=/sbin/snort
 # If you are using IP Reputation and getting some public lists, you will probably
 # want to tell pulledpork where your blacklist file lives, PP automagically will
 # de-dupe any duplicate IPs from different sources.
-black_list=<%= @black_list %>
+black_list=<%= scope['pulledpork::black_list'] %>
 
 # IP Reputation does NOT require a full snort HUP, it introduces a concept whereby
 # the IP list can be reloaded while snort is running through the use of a control
@@ -155,7 +155,7 @@ black_list=<%= @black_list %>
 # configure these!  The following option tells pulledpork where to place the version
 # file for use with control socket ip list reloads!
 # This should be the same path where your black_list lives!
-IPRVersion=<%= @ipr_version %>
+IPRVersion=<%= scope['pulledpork::ipr_version'] %>
 
 # The following option tells snort where the snort_control tool is located.
 #snort_control=/usr/local/bin/snort_control
@@ -201,10 +201,10 @@ IPRVersion=<%= @ipr_version %>
 
 # Here you can specify what rule modification files to run automatically.
 # simply uncomment and specify the apt path.
-enablesid=<%= @prefix %>/pulledpork-<%= @version %>/etc/enablesid.conf
-dropsid=<%= @prefix %>/pulledpork-<%= @version %>/etc/dropsid.conf
-disablesid=<%= @prefix %>/pulledpork-<%= @version %>/etc/disablesid.conf
-modifysid=<%= @prefix %>/pulledpork-<%= @version %>/etc/modifysid.conf
+enablesid=<%= scope['pulledpork::prefix'] %>/pulledpork-<%= scope['pulledpork::version'] %>/etc/enablesid.conf
+dropsid=<%= scope['pulledpork::prefix'] %>/pulledpork-<%= scope['pulledpork::version'] %>/etc/dropsid.conf
+disablesid=<%= scope['pulledpork::prefix'] %>/pulledpork-<%= scope['pulledpork::version'] %>/etc/disablesid.conf
+modifysid=<%= scope['pulledpork::prefix'] %>/pulledpork-<%= scope['pulledpork::version'] %>/etc/modifysid.conf
 
 # What is the base ruleset that you want to use, please uncomment to use
 # and see the README.RULESETS for a description of the options.  
@@ -216,4 +216,4 @@ modifysid=<%= @prefix %>/pulledpork-<%= @version %>/etc/modifysid.conf
 ####### need to process so_rules, simply comment out the so_rule section
 ####### you can also specify -T at runtime to process only GID 1 rules.
 
-version=<%= @version %>
+version=<%= scope['pulledpork::version'] %>
