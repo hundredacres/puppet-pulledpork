@@ -11,20 +11,19 @@ class pulledpork (
   $snort           = $pulledpork::params::snort,
   $black_list      = $pulledpork::params::black_list,
   $ipr_version     = $pulledpork::params::ipr_version,
+  $manage_cron     = $pulledpork::params::manage_cron,
   $oinkcode,
 ) inherits pulledpork::params {
 
-  Class['pulledpork::install'] -> Class['pulledpork::config']
-
-  class { 'pulledpork::install':
-    version => $version,
-    url     => "${baseurl}/pulledpork-${version}.tar.gz",
-    prefix  => $prefix,
+  if $pulledpork::manage_cron {
+    class { '::pulledpork::cron':}
   }
 
+  class { 'pulledpork::install':
+    url     => "${baseurl}/pulledpork-${version}.tar.gz",
+  } ->
+
   class { 'pulledpork::config':
-    version         => $version,
-    prefix          => $prefix,
     oinkcode        => $oinkcode,
     rule_path       => $rule_path,
     local_rule_path => $local_rule_path,
@@ -35,6 +34,6 @@ class pulledpork (
     snort           => $snort,
     black_list      => $black_list,
     ipr_version     => $ipr_version,
-  }
-
+  } ->
+  Class['::pulledpork']
 }

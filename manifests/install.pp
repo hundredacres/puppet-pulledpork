@@ -1,7 +1,5 @@
 class pulledpork::install (
-  $version,
   $url,
-  $prefix
 ) {
 
   package { $pulledpork::params::pkgs:
@@ -10,7 +8,7 @@ class pulledpork::install (
 
   wget::fetch { 'download-pulledpork':
     source      => $url,
-    destination => "/usr/src/pulledpork-${version}.tar.gz",
+    destination => "/usr/src/pulledpork-${pulledpork::version}.tar.gz",
     timeout     => 0,
     verbose     => false,
   }
@@ -20,9 +18,9 @@ class pulledpork::install (
   }
 
   exec { 'install-pulledpork':
-    cwd     => $prefix,
-    command => "/bin/tar zxf /usr/src/pulledpork-${version}.tar.gz",
-    creates => "${prefix}/pulledpork-${version}",
+    cwd     => $pulledpork::prefix,
+    command => "/bin/tar zxf /usr/src/pulledpork-${pulledpork::version}.tar.gz",
+    creates => "${pulledpork::prefix}/pulledpork-${pulledpork::version}",
     require => Wget::Fetch['download-pulledpork'],
   }
 }

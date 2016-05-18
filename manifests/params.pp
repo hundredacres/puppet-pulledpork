@@ -14,6 +14,7 @@ class pulledpork::params {
   $snort           = true
   $black_list      = '/usr/local/etc/snort/rules/iplists/default.blacklist'
   $ipr_version     = '/usr/local/etc/snort/rules/iplists'
+  $manage_cron     = true
 
   if $::osfamily == 'RedHat' {
     $pkgs = [

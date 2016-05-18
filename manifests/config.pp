@@ -1,6 +1,4 @@
 class pulledpork::config (
-  $version,
-  $prefix,
   $oinkcode,
   $rule_path,
   $local_rule_path,
@@ -13,7 +11,7 @@ class pulledpork::config (
   $ipr_version
 ) {
 
-  file { "${prefix}/pulledpork-${version}/etc/pulledpork.conf":
+  file { "${pulledpork::prefix}/pulledpork-${pulledpork::version}/etc/pulledpork.conf":
     ensure  => file,
     mode    => '0600',
     content => template('pulledpork/pulledpork.conf.erb'),
