@@ -1,3 +1,5 @@
+# = Class: pulledpork::params
+#
 class pulledpork::params {
   $baseurl         = 'https://pulledpork.googlecode.com/files'
   $version         = '0.7.0'
@@ -17,12 +19,10 @@ class pulledpork::params {
   $manage_cron     = true
 
   if $::osfamily == 'RedHat' {
-    $pkgs = [
-      'perl-LWP-Protocol-https',
-      'perl-Crypt-SSLeay',
-      'perl-Sys-Syslog',
-      'perl-Archive-Tar'
-    ]
+    $pkgs = $::operatingsystemmajrelease ? {
+      '5' => ['perl-LWP-Protocol-https','perl-Crypt-SSLeay','perl-Sys-Syslog','perl-Archive-Tar'],
+      '6' => ['perl-Crypt-SSLeay','perl-Archive-Tar'],
+    }
   }
   else {
     fail ("OSFamily ${::osfamily} not supported by module")
