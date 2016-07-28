@@ -21,7 +21,7 @@ class pulledpork::params {
   if $::osfamily == 'RedHat' {
     $pkgs = $::operatingsystemmajrelease ? {
       '5' => ['perl-LWP-Protocol-https','perl-Crypt-SSLeay','perl-Sys-Syslog','perl-Archive-Tar'],
-      '6' => ['perl-Crypt-SSLeay','perl-Archive-Tar'],
+      /6|7/ => ['perl-Crypt-SSLeay','perl-Archive-Tar'],
     }
   }
   else {
